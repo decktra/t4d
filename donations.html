@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script>
+      function getUrlVars() {
+          var vars = {};
+          var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+            vars[key] = value;
+          });
+          return vars;
+      }
+
+      var amount = getUrlVars()["amount"];
+      var frecuency = getUrlVars()["frecuency"];
+
+      const stripe = Stripe('pk_test_s4jRR8WYavuptulWTPXpvqt700ZqSC1ybk');
+      
+      axios.get('http://localhost:3000/donations/new?amount=' + amount + '&frecuency=' + frecuency)
+        .then(function (response) {
+          stripe.redirectToCheckout({
+            sessionId: response.data
+          }).then(function (result) {});
+        })
+        .catch(function (error) {
+          console.log(error);
+        })
+        .finally(function () {
+        });
+    </script>
+  </body>
+</html>
