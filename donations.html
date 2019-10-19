@@ -18,7 +18,7 @@
 
       const stripe = Stripe('pk_test_s4jRR8WYavuptulWTPXpvqt700ZqSC1ybk');
       
-      axios.get('https://decktra.herokuapp.com/donations/donations/new?amount=' + amount + '&frecuency=' + frecuency)
+      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&frecuency=' + frecuency)
         .then(function (response) {
           stripe.redirectToCheckout({
             sessionId: response.data
