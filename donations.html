@@ -12,14 +12,15 @@
           });
           return vars;
       }
-
+      i
       var amount = getUrlVars()["amount"];
+      var other_amount = getUrlVars()["other_amount"];
       var frecuency = getUrlVars()["frecuency"];
       var locale = getUrlVars()["locale"];
 
       const stripe = Stripe('pk_test_s4jRR8WYavuptulWTPXpvqt700ZqSC1ybk');
       
-      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&frecuency=' + frecuency + '&locale=' + locale)
+      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale)
         .then(function (response) {
           stripe.redirectToCheckout({
             sessionId: response.data
