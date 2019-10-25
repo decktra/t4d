@@ -904,13 +904,13 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script>
       function clearAmount() {
-        checkKey()
+        checkKey();
         var ele = document.getElementsByName("amount");
         for(var i=0;i<ele.length;i++)
           ele[i].checked = false;
       }
       function clearOtherAmount() {
-        checkKey()
+        checkKey();
         document.getElementById("otherAmount").value = "";
       }
       function checkKey() {
