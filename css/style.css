@@ -841,17 +841,17 @@ nav {
 }
 
 .donate-wraper-bg-one {
-    background: url('/img/about/01.jpg') no-repeat scroll center top / cover;
+    background: url('img/about/01.jpg') no-repeat scroll center top / cover;
     position: relative
 }
 
 .donate-wraper-bg-two {
-    background: url('/img/about/02.jpg') no-repeat scroll center top / cover;
+    background: url('img/about/02.jpg') no-repeat scroll center top / cover;
     position: relative
 }
 
 .donate-wraper-bg-three {
-    background: url('/img/about/03.jpg') no-repeat scroll center top / cover;
+    background: url('img/about/03.jpg') no-repeat scroll center top / cover;
     position: relative
 }
 

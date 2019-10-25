@@ -1,6 +1,18 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
   <body>
+    <div class="preloader">
+      <div class="spinner">
+          <div class="double-bounce1"></div>
+          <div class="double-bounce2"></div>
+      </div>
+      <img src="https://decktra.herokuapp.com"> 
+  </div>
+    <script src="js/vendor/jquery-3.2.1.min.js"></script>
+    <script src="js/main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://js.stripe.com/v3/"></script>
 
@@ -18,9 +30,9 @@
       var frecuency = getUrlVars()["frecuency"];
       var locale = getUrlVars()["locale"];
 
-      const stripe = Stripe('pk_test_s4jRR8WYavuptulWTPXpvqt700ZqSC1ybk');
+      const stripe = Stripe('pk_live_7mjHcdM9ysxwMgEHLpnMKNdT00UKi9yeMe');
       
-      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale)
+      axios.get('https://decktra.herokuapp.com/donations/new?amountKOKO=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale)
         .then(function (response) {
           stripe.redirectToCheckout({
             sessionId: response.data
