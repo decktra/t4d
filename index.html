@@ -720,10 +720,10 @@
                         </div>
                         <input type="hidden" name="locale" value='es' />
                         <div class="form-group col-sm-6">
-                            <div class="g-recaptcha" data-sitekey="6Lf2XL8UAAAAAJS2uwPQjP3CJ3ZAeuwJzxYVngT1"></div>
+                            <div class="g-recaptcha" data-sitekey="6Lf2XL8UAAAAAJS2uwPQjP3CJ3ZAeuwJzxYVngT1" data-callback="enabledSubmit"></div>
                         </div>
                         <div class="form-group col-sm-6">
-                            <button id="submit-button" type="submit" class="tem-btn move-eff"><span>donar ahora</span></button>
+                            <button id="submit-button" type="submit" class="tem-btn move-eff disabled"><span>donar ahora</span></button>
                         </div>
                     </div>
                   </form>
@@ -931,6 +931,11 @@
             .finally(function () {
                 console.log('Key Checked!')
             });
+      }
+
+      function enableSubmit() {
+        var element = document.getElementById("submit-button");
+        element.classList.remove("disabled");
       }
     </script>
   </body>
