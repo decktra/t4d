@@ -718,6 +718,7 @@
                             <h3>Your email</h3>
                             <input name="email" required="" type="email">
                         </div>
+                        <input type="hidden" name="locale" value='en' />
                         <div class="form-group col-sm-6">
                             <div class="g-recaptcha" data-sitekey="6Lf2XL8UAAAAAJS2uwPQjP3CJ3ZAeuwJzxYVngT1" data-callback="enableSubmit"></div>
                         </div>
@@ -948,5 +949,6 @@
         function enableSubmit() {
             document.getElementById('submit-button').disabled = false;
         }
+    </script>
   </body>
 </html>
