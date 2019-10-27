@@ -18,6 +18,8 @@
     <link rel="stylesheet" href="css/style.css">
     <!-- responsive css -->
     <link rel="stylesheet" href="css/responsive.css">
+    <!-- recaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
 
   <body>
@@ -716,10 +718,12 @@
                             <h3>Your email</h3>
                             <input name="email" required="" type="email">
                         </div>
-
-                        <input type="hidden" name="locale" value='en' />
-
-                        <button id="submit-button" type="submit" class="tem-btn move-eff"><span>donate now</span></button>
+                        <div class="form-group col-sm-6">
+                            <div class="g-recaptcha" data-sitekey="6Lf2XL8UAAAAAJS2uwPQjP3CJ3ZAeuwJzxYVngT1" data-callback="enableSubmit"></div>
+                        </div>
+                        <div class="form-group col-sm-6">
+                            <button id="submit-button" type="submit" class="tem-btn move-eff" disabled><span>donate now</span></button>
+                        </div>
                     </div>
                 </form>>
             </div>
@@ -913,31 +917,5 @@
     <!-- main js -->
     <script src="js/main.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <script>
-        function clearAmount() {
-          checkKey();
-          var ele = document.getElementsByName("amount");
-          for(var i=0;i<ele.length;i++)
-            ele[i].checked = false;
-        }
-        function clearOtherAmount() {
-          checkKey();
-          document.getElementById("otherAmount").value = "";
-        }
-        function checkKey() {
-          axios.get('https://decktra.herokuapp.com')
-              .then(function (response) {
-              stripe.redirectToCheckout({
-                  sessionId: response.data
-              }).then(function (result) {});
-              })
-              .catch(function (error) {
-              console.log(error);
-              })
-              .finally(function () {
-                  console.log('Key Checked!')
-              });
-        }
-      </script>
   </body>
 </html>
