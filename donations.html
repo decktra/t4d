@@ -28,10 +28,12 @@
       var other_amount = getUrlVars()["other_amount"];
       var frecuency = getUrlVars()["frecuency"];
       var locale = getUrlVars()["locale"];
+      var recaptcha = getUrlVars()["g-recaptcha-response"];
+
 
       const stripe = Stripe('pk_live_7mjHcdM9ysxwMgEHLpnMKNdT00UKi9yeMe');
       
-      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale)
+      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale + '&recaptcha=' + recaptcha)
         .then(function (response) {
           stripe.redirectToCheckout({
             sessionId: response.data
