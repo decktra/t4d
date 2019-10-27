@@ -35,37 +35,6 @@
 
 */
 
-function clearAmount() {
-    checkKey();
-    var ele = document.getElementsByName("amount");
-    for(var i=0;i<ele.length;i++)
-        ele[i].checked = false;
-}
-
-function clearOtherAmount() {
-    checkKey();
-    document.getElementById("otherAmount").value = "";
-}
-
-function checkKey() {
-    axios.get('https://decktra.herokuapp.com')
-        .then(function (response) {
-        stripe.redirectToCheckout({
-            sessionId: response.data
-        }).then(function (result) {});
-        })
-        .catch(function (error) {
-        console.log(error);
-        })
-        .finally(function () {
-            console.log('Key Checked!')
-        });
-}
-
-function enableSubmit() {
-    document.getElementById('submit-button').disabled = false;
-}
-
 (function ($) {
 
     'use strict';
@@ -424,5 +393,4 @@ function enableSubmit() {
             return false;
         });
     });
-
 }(jQuery));
