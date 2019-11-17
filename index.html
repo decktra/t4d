@@ -694,7 +694,7 @@
                 <form action='donations.html' method='get'>  
                     <div class="donate-form">
                         <div class="form-group col-md-12">
-                            <h3>¿Cuánto deseas donar?</h3>
+                            <h3>Donar con tarjeta:</h3>
                             <div class="select-amount">
                                 <input name="amount" value="5" type="radio" onclick="clearOtherAmount()"><label>€5</label>
                                 <input name="amount" value="10" type="radio" onclick="clearOtherAmount()"><label>€10</label>
@@ -726,7 +726,22 @@
                             <button id="submit-button" type="submit" class="tem-btn move-eff" disabled><span>donar ahora</span></button>
                         </div>
                     </div>
-                  </form>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-8 col-md-offset-0">
+                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                    <div class="donate-form" style="padding-top:0px">
+                        <div class="form-group col-md-12">
+                            <h3>Donar con Paypal:</h3>
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="4U2CH5MT2HPGQ" />
+                            <input type="image" src="https://www.paypalobjects.com/es_ES/ES/i/btn/btn_donate_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Botón Donar con PayPal" />
+                            <img alt="" border="0" src="https://www.paypal.com/es_ES/i/scr/pixel.gif" width="1" height="1" />
+                        </div>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
