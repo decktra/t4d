@@ -35,7 +35,7 @@
 
       const stripe = Stripe('pk_live_7mjHcdM9ysxwMgEHLpnMKNdT00UKi9yeMe');
       
-      axios.get('https://decktra.herokuapp.com/donations/new?amount=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale + '&recaptcha=' + recaptcha)
+      axios.get('https://t4d-backend.onrender.com/donations/new?amount=' + amount + '&other_amount=' + other_amount + '&frecuency=' + frecuency + '&locale=' + locale + '&recaptcha=' + recaptcha)
         .then(function (response) {
           stripe.redirectToCheckout({
             sessionId: response.data

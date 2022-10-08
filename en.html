@@ -691,7 +691,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-0">
                 <!-- donate form -->
-                <form action='https://decktra.herokuapp.com/donations/new' method='get'>
+                <form action='https://t4d-backend.onrender.com/donations/new' method='get'>
                     <div class="donate-form">
                         <div class="form-group col-md-12">
                             <h3>How much would you like to donate?</h3>
@@ -934,7 +934,7 @@
         }
 
         function checkKey() {
-            axios.get('https://decktra.herokuapp.com')
+            axios.get('https://t4d-backend.onrender.com')
                 .then(function (response) {
                 stripe.redirectToCheckout({
                     sessionId: response.data
